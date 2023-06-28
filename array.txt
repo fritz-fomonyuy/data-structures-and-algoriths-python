@@ -1,0 +1,11 @@
+an array is a simple collection of things they are very powerful data structures that stores list of elements and 
+they have endless applications
+
+In simple terms, an array is a collection of
+elements of the same data type that are stored 
+together in a contiguous block of memory and can be 
+accessed using an index or a key. It is a fundamental data 
+structure in computer science and is used to store and 
+manipulate large amounts of data efficiently. An array can be 
+one-dimensional, two-dimensional, or multi-dimensional, 
+depending on the number of indices required to access its elements.
