@@ -17,6 +17,6 @@ def seachingElement(array,value):
             return array.index(value)
     return "element does not exist in the array"
 
-seachingElement(arr_1,4)
+seachingElement(arr_1,)
 
      
