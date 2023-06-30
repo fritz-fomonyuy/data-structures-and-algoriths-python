@@ -24,3 +24,11 @@ print(books)
 books.pop(4)
 books.remove("lafon")
 print(books)
+
+#seaching for an element in list
+def searchinlist(list,value):
+    for i in list:
+        if i == value:
+            return list.index(value)
+    return "value is not in list"
+print(searchinlist(books,4))
