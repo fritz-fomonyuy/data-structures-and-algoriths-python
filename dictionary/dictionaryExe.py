@@ -46,3 +46,8 @@ print(my_dict.values())
 
 my_dict.setdefault(1,"inserted successfully") #function addes the value automatic when searched and not exist in list
 
+print(my_dict.pop("1","not"))
+
+newdictionary = {23:4,12:2}
+my_dict.update(newdictionary)
+print(my_dict)
