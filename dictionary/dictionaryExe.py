@@ -16,3 +16,11 @@ def traversing(dict):
       print(key, dict)
 
 traversing(word_enc)
+
+def search_dictValue(Dict,value):
+    for key in Dict:
+        if dict[key] == value:
+            return key , value
+    return "value not in list"
+
+print(search_dictValue(word_enc,"food"))
