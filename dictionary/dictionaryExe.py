@@ -33,3 +33,16 @@ myDict.popitem()
 print(myDict)
 myDict.clear() #deletes the entire dictionary 
 del myDict #deletes the entire dictionary
+
+#more dictionary methods
+my_dict={1:4,2:3,3:4}
+dic2 = word_enc.copy() # create coppy of a dictionary
+
+dic3 = {}.fromkeys([1,2,3,4],4)
+
+print(my_dict.get(2,8))
+print(my_dict.keys())
+print(my_dict.values())
+
+my_dict.setdefault(1,"inserted successfully") #function addes the value automatic when searched and not exist in list
+
