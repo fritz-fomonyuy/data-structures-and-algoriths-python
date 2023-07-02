@@ -12,3 +12,13 @@ for i in new_tuple:
 for i in range(len(new_tuple)):
     print(new_tuple[i])
     
+#searching an element in tuple
+print(2 in new_tuple) #using in operator returns  true or false
+
+def searchintuple(Tuple,value):
+    for i in Tuple:
+        if i == value:
+            return Tuple.index(i)
+    return "element not in tuple"
+
+
