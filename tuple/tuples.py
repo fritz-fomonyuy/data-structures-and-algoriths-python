@@ -21,4 +21,10 @@ def searchintuple(Tuple,value):
             return Tuple.index(i)
     return "element not in tuple"
 
+#more tuple methods
+
+new_tuple.count(2) #returns the number of times an element exist in a tuple
+mytuple=tuple([1,2,3,4]) #this methods creates a tuple from a list
+
+
 
