@@ -22,13 +22,24 @@ class SlinkedList:
         else:
             if location == 0:
                 newNode.next = self.head
-                self.head
+                self.head = newNode
+            elif location==1:
+                newNode.next=Node
+                self.tail.next=newNode
+                self.tail = newNode
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location -1:
+                    tempNode=tempNode.next
+                    index +=1
+                nextNode = tempNode.next
+                tempNode.next=newNode
+                newNode.next = nextNode
+
+
 
 
 singlelinkedList = SlinkedList()
-node1=Node(1)
-node2=Node(2)
-
-singlelinkedList.head =node1
-singlelinkedList.head.next=node2
-singlelinkedList.tail=node2
+singlelinkedList.insertSLL(1,1)
+print([node.value for node in singlelinkedList])
