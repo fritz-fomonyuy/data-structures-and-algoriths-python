@@ -24,7 +24,7 @@ class SlinkedList:
                 newNode.next = self.head
                 self.head = newNode
             elif location==1:
-                newNode.next=Node
+                newNode.next=None
                 self.tail.next=newNode
                 self.tail = newNode
             else:
@@ -42,4 +42,6 @@ class SlinkedList:
 
 singlelinkedList = SlinkedList()
 singlelinkedList.insertSLL(1,1)
+singlelinkedList.insertSLL(1,1)
+
 print([node.value for node in singlelinkedList])
