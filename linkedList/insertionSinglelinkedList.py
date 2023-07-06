@@ -40,7 +40,11 @@ class SlinkedList:
         if self.head == None:
             print("list not exist")
         else:
-            
+            node = self.head
+            while node is not None:
+                print(node.value)
+                node = node.next
+
 
 
 
@@ -54,4 +58,4 @@ singlelinkedList.insertSLL(2,2)
 singlelinkedList.insertSLL(7,3)
 print([node.value for node in singlelinkedList])
 
-singlelinkedList.Trsverse_SLList()
+singlelinkedList.traverseSLL()
