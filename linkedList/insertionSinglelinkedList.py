@@ -86,14 +86,13 @@ class SlinkedList:
                     index += 1
                 nextNode = tempNode.next
                 tempNode.next = nextNode.next
-
-
-
-
-
-
-
-
+    def deleteentireSLL(self):
+        if self.head == None:
+            return "list doesnot exist"
+        else:
+            self.head = None
+            self.tail = None
+            
 singlelinkedList = SlinkedList()
 singlelinkedList.insertSLL(1,1)
 singlelinkedList.insertSLL(1,1)
