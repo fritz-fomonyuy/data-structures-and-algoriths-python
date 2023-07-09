@@ -45,6 +45,16 @@ class SlinkedList:
                 print(node.value)
                 node = node.next
 
+    def searchinSLL(self, nodevalue):
+        if self.head==None:
+            return "SLLlist is empty"
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == nodevalue:
+                    return node.value
+                node = node.next
+            return "value doesnot exist in SLList"
 
 
 
@@ -59,3 +69,4 @@ singlelinkedList.insertSLL(7,3)
 print([node.value for node in singlelinkedList])
 
 singlelinkedList.traverseSLL()
+print(singlelinkedList.searchinSLL(3))
