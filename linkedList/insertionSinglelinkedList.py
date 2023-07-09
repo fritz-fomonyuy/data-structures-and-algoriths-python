@@ -56,6 +56,39 @@ class SlinkedList:
                 node = node.next
             return "value doesnot exist in SLList"
 
+    def deleteNode(self, location):
+        if self.head ==None:
+            return "SLL is empty"
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    while node is not None:
+                        if node.next == self.tail:
+                            break
+                        node = node.next
+                    node.next = None
+                    self.tail = node
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location - 1:
+                    tempNode =tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = nextNode.next
+
+
+
 
 
 
@@ -70,3 +103,5 @@ print([node.value for node in singlelinkedList])
 
 singlelinkedList.traverseSLL()
 print(singlelinkedList.searchinSLL(3))
+print(singlelinkedList.deleteNode(0))
+singlelinkedList.traverseSLL()
