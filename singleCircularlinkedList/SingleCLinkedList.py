@@ -13,7 +13,7 @@ class single_circular_linked_list:
         while node:
             yield node
             node = node.next
-            if node.tail.next == self.head:
+            if node == self.head:
                 break
             
     
@@ -53,4 +53,5 @@ class single_circular_linked_list:
 circularSll = single_circular_linked_list()
 circularSll.creatSCLL(1)
 circularSll.NodeInsertionSCLL(1,23)
+print([node.value for node in circularSll])
 
