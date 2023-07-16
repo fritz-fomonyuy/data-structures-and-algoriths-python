@@ -57,12 +57,24 @@ class single_circular_linked_list:
                 temPnode = temPnode.next
                 if temPnode == self.tail.next:
                     break
-
+    def SearchSCLl(self,nodeValue):
+        if self.head is None:
+            return "CSLL is empty"
+        else:
+            tempNode = self.head
+            while tempNode:
+                if tempNode.value == nodeValue:
+                    return tempNode.value
+                tempNode.next
+                if tempNode == self.tail.next:
+                    return "node doesnot exist in CSLL"
+            
 
 circularSll = single_circular_linked_list()
 circularSll.creatSCLL(1)
 circularSll.NodeInsertionSCLL(1,23)
 circularSll.NodeInsertionSCLL(0,10)
 circularSll.NodeInsertionSCLL(1,33)
+print(circularSll.SearchSCLl(2))
 print([node.value for node in circularSll])
 
