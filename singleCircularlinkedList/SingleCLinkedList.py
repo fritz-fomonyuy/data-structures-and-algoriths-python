@@ -45,7 +45,7 @@ class single_circular_linked_list:
                     index += 1
                 nextNode = tempNode.next
                 tempNode.next = NewNode
-                NewNode.next = tempNode
+                NewNode.next = nextNode
     
 
 
@@ -53,5 +53,7 @@ class single_circular_linked_list:
 circularSll = single_circular_linked_list()
 circularSll.creatSCLL(1)
 circularSll.NodeInsertionSCLL(1,23)
+circularSll.NodeInsertionSCLL(0,10)
+circularSll.NodeInsertionSCLL(1,33)
 print([node.value for node in circularSll])
 
