@@ -47,7 +47,16 @@ class single_circular_linked_list:
                 tempNode.next = NewNode
                 NewNode.next = nextNode
     
-
+    def traversalSCLL(self):
+        if self.head is None:
+            return "SCLL is empty"
+        else:
+            temPnode = self.head
+            while temPnode:
+                print(temPnode.value)
+                temPnode = temPnode.next
+                if temPnode == self.tail.next:
+                    break
 
 
 circularSll = single_circular_linked_list()
