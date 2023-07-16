@@ -68,7 +68,43 @@ class single_circular_linked_list:
                 tempNode.next
                 if tempNode == self.tail.next:
                     return "node doesnot exist in CSLL"
-            
+    def delete_Node_SCLL(self,position):
+        if self.head is None:
+            return "SCLL is empty"
+        else:
+            if position == 0:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head =self.head.next
+                    self.tail = self.head
+            elif position == 1:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    while node is not None:
+                        if node.next == self.tail:
+                            break
+                        node = node.next
+                    node.next = self.head
+                    self.tail = node
+            else:
+                tempNode = self.head
+                index = 0
+                while index < position - 1:
+                    tempNode = tempNode.next
+                    index +=1
+                nextnode = tempNode.next
+                tempNode.next =nextnode    
+
+
+
+                    
 
 circularSll = single_circular_linked_list()
 circularSll.creatSCLL(1)
