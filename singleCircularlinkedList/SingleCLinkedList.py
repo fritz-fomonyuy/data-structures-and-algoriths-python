@@ -103,7 +103,9 @@ class single_circular_linked_list:
                 tempNode.next =nextnode    
 
 
-
+    def deleteEntireSCLL(self):
+        self.head = None
+        self.tail = None
                     
 
 circularSll = single_circular_linked_list()
@@ -112,5 +114,7 @@ circularSll.NodeInsertionSCLL(1,23)
 circularSll.NodeInsertionSCLL(0,10)
 circularSll.NodeInsertionSCLL(1,33)
 print(circularSll.SearchSCLl(2))
+circularSll.delete_Node_SCLL(1)
+circularSll.deleteEntireSCLL()
 print([node.value for node in circularSll])
 
