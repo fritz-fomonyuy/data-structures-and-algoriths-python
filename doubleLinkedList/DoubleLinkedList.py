@@ -47,9 +47,21 @@ class Double_LinkedList:
                 node.prev = tempnode
                 node.next.prev= node
                 tempnode.next = node
-           
+    def traversDLL(self):
+        if self.head is None:
+            return "nothing to traverse"
+        else:
+            tempnode = self.head
+            while tempnode:
+                print (tempnode.value)
+                tempnode.next
+                if tempnode.next == self.tail:
+                    break
+
+                        
 Double_linked_list = Double_LinkedList()
 Double_linked_list.createDLL(12)
 Double_linked_list.insertNode(1,1)
+Double_linked_list.traversDLL()
 print([node.value for node in Double_linked_list])
 
