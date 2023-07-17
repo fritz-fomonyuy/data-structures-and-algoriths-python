@@ -24,44 +24,54 @@ class Double_LinkedList:
     
     def insertNode(self,position,nodeValue):
         if self.head is None:
-            return "node can't insert"
+            print("node can't insert")
         else:
-            node = Node(nodeValue)
+            newnode = Node(nodeValue)
             if position == 0:
-                node.prev =None
-                node.next = self.head
-                self.head.prev = node
-                self.head = node
+                newnode.prev =None
+                newnode.next = self.head
+                self.head.prev = newnode
+                self.head = newnode
             elif position == 1:
-                node.next = None
-                node.prev = self.tail
-                self.tail.next = node
-                self.tail = node
+                newnode.next = None
+                newnode.prev = self.tail
+                self.tail.next = newnode
+                self.tail = newnode
             else:
                 tempnode = self.head 
                 index =0
                 while index < position - 1:
                     tempnode = tempnode.next
                     index +=1 
-                node.next = tempnode.next
-                node.prev = tempnode
-                node.next.prev= node
-                tempnode.next = node
+                newnode.next = tempnode.next
+                newnode.prev = tempnode
+                newnode.next.prev= newnode
+                tempnode.next = newnode
     def traversDLL(self):
         if self.head is None:
-            return "nothing to traverse"
+            print("nothing to traverse")
         else:
             tempnode = self.head
             while tempnode:
                 print (tempnode.value)
-                tempnode.next
-                if tempnode.next == self.tail:
-                    break
+                tempnode = tempnode.next
+    def reversetraversDLL(self):
+        if self.head is None:
+            print("nothing to traverse")
+        else:
+            tempnode = self.tail
+            while tempnode:
+                print (tempnode.value)
+                tempnode = tempnode.prev
+                           
 
-                        
 Double_linked_list = Double_LinkedList()
 Double_linked_list.createDLL(12)
 Double_linked_list.insertNode(1,1)
+Double_linked_list.insertNode(1,14)
+Double_linked_list.insertNode(1,13)
+Double_linked_list.insertNode(2,13)
 Double_linked_list.traversDLL()
+Double_linked_list.reversetraversDLL()
 print([node.value for node in Double_linked_list])
 
