@@ -119,5 +119,7 @@ Double_linked_list.insertNode(2,13)
 Double_linked_list.traversDLL()
 Double_linked_list.reversetraversDLL()
 Double_linked_list.searchDLL(3)
+Double_linked_list.deletenode(1)
+Double_linked_list.deleteEntireDLL()
 print([node.value for node in Double_linked_list])
 
