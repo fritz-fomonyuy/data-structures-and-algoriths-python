@@ -73,8 +73,42 @@ class Double_LinkedList:
                    print(tempnode.value)
                 tempnode = tempnode.next
             print("node doe not exist")
-                
-                           
+    def deletenode(self,location):
+                if self.head is None:
+                    print("there is no element to delete")
+                else:
+                    if location == 0:
+                        if self.head == self.tail:
+                            self.head = None
+                            self.tail = None
+                        else:
+                            self.head =self.head.next
+                            self.head.prev = None
+                    elif location == 1:
+                        if self.head ==self.tail:
+                            self.head=None
+                            self.tail = None
+                        else:
+                            self.tail = self.tail.prev
+                            self.tail.next = None
+                    else:
+                        currentNode = self.head
+                        index = 0
+                        while index < location - 1:
+                            currentNode = currentNode.next
+                            index +=1
+                        currentNode.next= currentNode.next.next
+                        currentNode.next.prev = currentNode
+                    print("node has been deleted succesfully")
+
+    def deleteEntireDLL(self):
+        if self.head== None:
+            print("DLL not exist")
+        else:
+            self.head = None
+            self.tail=None
+            print("entire DLL has been deleted")
+
 
 Double_linked_list = Double_LinkedList()
 Double_linked_list.createDLL(12)
@@ -84,6 +118,6 @@ Double_linked_list.insertNode(1,13)
 Double_linked_list.insertNode(2,13)
 Double_linked_list.traversDLL()
 Double_linked_list.reversetraversDLL()
-Double_linked_list.searchDLL(13)
+Double_linked_list.searchDLL(3)
 print([node.value for node in Double_linked_list])
 
