@@ -63,6 +63,17 @@ class Double_LinkedList:
             while tempnode:
                 print (tempnode.value)
                 tempnode = tempnode.prev
+    def searchDLL(self,nodeval):
+        if self.head is None:
+            print("nothing to search")
+        else:
+            tempnode = self.head
+            while tempnode:
+                if tempnode.value == nodeval:
+                   print(tempnode.value)
+                tempnode = tempnode.next
+            print("node doe not exist")
+                
                            
 
 Double_linked_list = Double_LinkedList()
@@ -73,5 +84,6 @@ Double_linked_list.insertNode(1,13)
 Double_linked_list.insertNode(2,13)
 Double_linked_list.traversDLL()
 Double_linked_list.reversetraversDLL()
+Double_linked_list.searchDLL(13)
 print([node.value for node in Double_linked_list])
 
