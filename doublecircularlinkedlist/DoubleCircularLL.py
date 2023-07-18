@@ -21,9 +21,19 @@ class Double_CircularLL: #class initialises head and tail references
         node = Node(Node_Val)
         self.head = node
         self.tail = node
-        node.prev = None
-        node.next = None
+        node.prev = node
+        node.next = node
 
+    def Insert_Node(self,Position,Node_value):
+        if self.head == None:
+            print("list not found")
+        else:
+            New_Node = Node(Node_value)
+            if Position == 0:
+                New_Node.prev = self.tail
+                New_Node.next = self.head
+                self.head.prev = New_Node 
+                self.tail.next = New_Node        
 Circular_DoubleLL = Double_CircularLL()
 Circular_DoubleLL.Creat_CLL(45)
 print([node.value for node in Circular_DoubleLL])
