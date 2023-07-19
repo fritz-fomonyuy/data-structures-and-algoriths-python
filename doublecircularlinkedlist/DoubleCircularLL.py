@@ -33,9 +33,29 @@ class Double_CircularLL: #class initialises head and tail references
                 New_Node.prev = self.tail
                 New_Node.next = self.head
                 self.head.prev = New_Node 
-                self.tail.next = New_Node        
+                self.head = New_Node
+                self.tail.next = self.head
+            elif Position == 1:
+                New_Node.next = self.head
+                New_Node.prev = self.tail
+                self.head.prev = New_Node
+                self.tail.next = New_Node
+                self.tail = New_Node
+            else:
+                Temp_Node = self.head
+                index = 1
+                while index < Position - 1:
+                    Temp_Node = Temp_Node.next
+                    index += 1
+                New_Node.next = Temp_Node.next
+                New_Node.prev = Temp_Node
+                New_Node.next.prev = New_Node
+                Temp_Node.next = New_Node
+            return "the node has been inserted sucessfully"
 Circular_DoubleLL = Double_CircularLL()
 Circular_DoubleLL.Creat_CLL(45)
 print([node.value for node in Circular_DoubleLL])
+
+
 
 
