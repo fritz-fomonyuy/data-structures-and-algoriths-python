@@ -89,6 +89,7 @@ class Double_CircularLL: #class initialises head and tail references
 Circular_DoubleLL = Double_CircularLL()
 Circular_DoubleLL.Creat_CLL(45)
 Circular_DoubleLL.Insert_Node(1,4)
+Circular_DoubleLL.deleteNode(1)
 print([node.value for node in Circular_DoubleLL])
 
 
