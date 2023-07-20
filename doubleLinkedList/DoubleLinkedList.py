@@ -105,6 +105,10 @@ class Double_LinkedList:
         if self.head== None:
             print("DLL not exist")
         else:
+            tempnode = self.head
+            while tempnode:
+                tempnode.prev = None
+                tempnode = tempnode.next
             self.head = None
             self.tail=None
             print("entire DLL has been deleted")
