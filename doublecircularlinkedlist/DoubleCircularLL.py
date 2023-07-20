@@ -86,10 +86,23 @@ class Double_CircularLL: #class initialises head and tail references
                 Temp_Node.next = Temp_Node.next.next
                 Temp_Node.prev = Temp_Node.next.prev
                 return "node has been deleted sucessfuly"
+    def DeleteAll(self): 
+        if self.head is None:
+            print("nothing to delete")
+        else:
+            self.tail.next = None
+            tempnode = self.head
+            while tempnode:
+                tempnode.prev = None
+                tempnode = tempnode.next
+            self.head = None
+            self.tail = None
+            print("DLL has been deleted sucesfully")
 Circular_DoubleLL = Double_CircularLL()
 Circular_DoubleLL.Creat_CLL(45)
 Circular_DoubleLL.Insert_Node(1,4)
 Circular_DoubleLL.deleteNode(1)
+Circular_DoubleLL.Delete_all()
 print([node.value for node in Circular_DoubleLL])
 
 
