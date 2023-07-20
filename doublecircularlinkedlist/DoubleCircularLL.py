@@ -23,7 +23,7 @@ class Double_CircularLL: #class initialises head and tail references
         self.tail = node
         node.prev = node
         node.next = node
-
+    ''' the function below inserts a node in DCLL in  '''
     def Insert_Node(self,Position,Node_value):
         if self.head == None:
             print("list not found")
@@ -52,8 +52,43 @@ class Double_CircularLL: #class initialises head and tail references
                 New_Node.next.prev = New_Node
                 Temp_Node.next = New_Node
             return "the node has been inserted sucessfully"
+
+    def deleteNode(self,Position):
+        if self.head is None:
+            return "linked list not exist"
+        else:
+            if Position == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                    self.head.next = None
+                    self.tail.next = None
+                else:
+                   self.head = self.head.next
+                   self.head.prev = self.tail
+                   self.head.next =self.head 
+            elif Position == 1:
+                if self.head== self.tail:
+                   self.tail = None
+                   self.head = None
+                   self.tail.next = None
+                   self.tail.prev = None
+                else:
+                   self.tail = self.tail.next
+                   self.tail.next = self.tail
+                   self.head.prev = self.head
+            else:
+                Temp_Node = self.head
+                index = 0
+                while index < Position - 1:
+                    Temp_Node = Temp_Node.next
+                    index +=1
+                Temp_Node.next = Temp_Node.next.next
+                Temp_Node.prev = Temp_Node.next.prev
+                return "node has been deleted sucessfuly"
 Circular_DoubleLL = Double_CircularLL()
 Circular_DoubleLL.Creat_CLL(45)
+Circular_DoubleLL.Insert_Node(1,4)
 print([node.value for node in Circular_DoubleLL])
 
 
