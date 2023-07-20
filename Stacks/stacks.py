@@ -28,7 +28,9 @@ class Stack:
             return "True"
         else:
             return self.list[len(self.list)-1]
-
+    def delete(self):
+        self.list = None
+        
 customStack = Stack()
 customStack.push(2)
 customStack.push(33)
