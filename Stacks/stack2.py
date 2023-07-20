@@ -35,4 +35,5 @@ class Stack:
 
 
 customStack = Stack(12)
+print(customStack.isEmpty())
 
