@@ -15,11 +15,16 @@ class Queue:
     def enqueue(self,item):
         self.items.append(item)
         return "item inserted sucessfullt"
+    
+    def dequeue(self):
+        self.items.pop()
+        return "item has been deleted sucessfully"
 
         
 customQueue = Queue()
 customQueue.enqueue(12)
 customQueue.enqueue(14)
+customQueue.dequeue()
 print(customQueue.isEmpty())
 print(customQueue)
     
