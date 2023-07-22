@@ -24,6 +24,9 @@ class Queue:
             return "queue is empty"
         else:
             return self.items[0]
+    def delete(self):
+        self.items = None
+
         
 customQueue = Queue()
 customQueue.enqueue(12)
@@ -32,4 +35,4 @@ customQueue.dequeue()
 print(customQueue.isEmpty())
 print(customQueue.peek())
 print(customQueue)
-    
+customQueue.delete()  
