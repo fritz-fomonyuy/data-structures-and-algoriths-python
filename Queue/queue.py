@@ -11,6 +11,15 @@ class Queue:
             return True
         else:
             return False
+
+    def enqueue(self,item):
+        self.items.append(item)
+        return "item inserted sucessfullt"
+
         
-    
+customQueue = Queue()
+customQueue.enqueue(12)
+customQueue.enqueue(14)
+print(customQueue.isEmpty())
+print(customQueue)
     
