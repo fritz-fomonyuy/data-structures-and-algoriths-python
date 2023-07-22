@@ -19,12 +19,17 @@ class Queue:
     def dequeue(self):
         self.items.pop()
         return "item has been deleted sucessfully"
-
+    def peek(self):
+        if self.items == []:
+            return "queue is empty"
+        else:
+            return self.items[0]
         
 customQueue = Queue()
 customQueue.enqueue(12)
 customQueue.enqueue(14)
 customQueue.dequeue()
 print(customQueue.isEmpty())
+print(customQueue.peek())
 print(customQueue)
     
