@@ -49,12 +49,20 @@ class Queue1:
             else:
                 self.start +=1
             self.items[start] = None
-            return "first element has been deleted succesfuly"
-                
+            return firstElement
+
+    def peek(self):
+        if self.isEmpty():
+            return "empty queue"
+        else:
+            return self.items[self.start]
+
           
 customQueue = Queue1(3)
 customQueue.enqueue(1)
 customQueue.enqueue(2)
 customQueue.enqueue(3)
+customQueue.dequeue()
+customQueue.peek()
 # customQueue.delete()
 print(customQueue)
