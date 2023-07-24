@@ -57,6 +57,11 @@ class Queue1:
         else:
             return self.items[self.start]
 
+    def delete(self):
+        self.items = self.maxSize*[None]
+        self.top = -1
+        self.start = -1
+
           
 customQueue = Queue1(3)
 customQueue.enqueue(1)
@@ -64,5 +69,5 @@ customQueue.enqueue(2)
 customQueue.enqueue(3)
 customQueue.dequeue()
 customQueue.peek()
-# customQueue.delete()
+customQueue.delete()
 print(customQueue)
