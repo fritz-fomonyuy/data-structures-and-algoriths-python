@@ -34,7 +34,23 @@ class Queue1:
                    self.start = 0
             self.items[self.top] = value
             return "element inserted at the end of the queue"
-        
+
+    def dequeue(self):
+        if self.isEmpty():
+            return "queue is empty"
+        else:
+            firstElement = self.items[self.start]
+            start = self.start
+            if self.start == self.top:
+                self.start = -1 
+                self.top = -1
+            elif self.start + 1 == self.maxSize:
+                self.start = 0
+            else:
+                self.start +=1
+            self.items[start] = None
+            return "first element has been deleted succesfuly"
+                
           
 customQueue = Queue1(3)
 customQueue.enqueue(1)
