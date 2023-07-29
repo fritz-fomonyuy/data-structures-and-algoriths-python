@@ -1,3 +1,4 @@
+
 class TreeNode:
     def __init__(self,data):
         self.data = data
@@ -30,6 +31,12 @@ def postOrderTraversal(rootNode):
     postOrderTraversal(rootNode.leftChild)
     postOrderTraversal(rootNode.rightChild)
     print(rootNode.data)
+
+def levelOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    levelOrderTraversal(rootNode.leftChild)
+    levelOrderTraversal(rootNode.rightChild)
 
 postOrderTraversal(newBT)
 
