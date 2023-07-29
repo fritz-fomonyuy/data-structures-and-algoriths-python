@@ -17,4 +17,13 @@ def preOrderTraversal(rootNode):
     preOrderTraversal(rootNode.leftChild)
     preOrderTraversal(rootNode.rightChild)
 
+def inOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    inOrderTraversal(rootNode.leftChild)
+    print(rootNode.data)
+    inOrderTraversal(rootNode.rightChild)
+
+inOrderTraversal(newBT)
+
 preOrderTraversal(newBT)
