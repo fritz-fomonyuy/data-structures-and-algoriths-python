@@ -60,8 +60,22 @@ def levelOtravers(rootN):
             if (root.value.rightChild is not None):
                 customqueue.enqueue(root.value.rightChild) 
 
-levelOtravers(newBT)                    
-
+def searchBT(rootNode,nodeValue):
+    if not rootNode:
+        return "binaryTree not found"
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not (customQueue.isEmpty()):
+            root =customQueue.dequeue()
+            if root.value.data == nodeValue:
+                return True
+            if (root.value.leftChild is not None):
+                customQueue.enqueue(root.value.leftChild)
+            if (root.value.rightChild is not None):
+                customQueue.enqueue(root.value.rightChild)
+            return False                       
+print(searchBT(newBT, "beer"))
 
 
 
