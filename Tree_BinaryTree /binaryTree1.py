@@ -75,10 +75,27 @@ def searchBT(rootNode,nodeValue):
             if (root.value.rightChild is not None):
                 customQueue.enqueue(root.value.rightChild)
             return False                       
-print(searchBT(newBT, "beer"))
-
-
-
+def insertBT_Node(rootNode,newNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not (customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            else:
+                root.value.leftChild = newNode
+                return "Node has added sucessfuly"
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            else:
+                root.value.rightChild = newNode
+                return "Node has added sucessfuly"
+newNode = TreeNode("malt")
+print(insertBT_Node(newBT,newNode))
+levelOtravers(newBT)
             
 
 
