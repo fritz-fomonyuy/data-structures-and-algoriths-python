@@ -93,10 +93,28 @@ def insertBT_Node(rootNode,newNode):
             else:
                 root.value.rightChild = newNode
                 return "Node has added sucessfuly"
-newNode = TreeNode("malt")
-print(insertBT_Node(newBT,newNode))
-levelOtravers(newBT)
-            
+
+def getDeepestNode(rootNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not (customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if (root.value.leftChild is not None):
+                customQueue.enqueue(root.value.leftChild)
+
+            if (root.value.rightChild is not None):
+                customQueue.enqueue(root.value.rightChild)
+        
+        deepestNode = root.value
+        return deepestNode 
+
+# newNode = TreeNode("malt")
+# print(insertBT_Node(newBT,newNode))
+# getDeepestNode =getDeepestNode(newBT)
+# print(getDeepestNode.data)          
 
 
 
