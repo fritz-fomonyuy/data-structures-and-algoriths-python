@@ -154,6 +154,11 @@ def deleteNodeBT(rootNode , node):
                 customQueue.enqueue(root.value.rightChild)
         
         return "failed to delete node"
+def deleteBT(rootNode):
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "binary tree deleted succesfully"
 
 #newNode = TreeNode("malt")
 # print(insertBT_Node(newBT,newNode))
@@ -161,6 +166,7 @@ deepNode =getDeepestNode(newBT)
 print(deepNode.data)
 deleteDeepestNode(newBT,deepNode)
 deleteNodeBT(newBT,"Cold")
+deleteBT(newBT)
 levelOtravers(newBT)
 
 
