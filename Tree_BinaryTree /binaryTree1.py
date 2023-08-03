@@ -110,11 +110,38 @@ def getDeepestNode(rootNode):
         
         deepestNode = root.value
         return deepestNode 
+def deleteDeepestNode(rootNode,dNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not (customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.data == dNode:
+                root.value = None
+                return
+            if root.value.leftChild:
+               if root.value.leftChild == dNode:
+                    root.value.leftChild = None
+                    return
+               else:
+                     customQueue.enqueue(root.value.leftChild)
+            if root.value.rightChild:
+                if root.value.rightChild == dNode:
+                    root.value.rightChild = None
+                    return
+            else:
+                customQueue.enqueue(root.value.rightChild)
 
-# newNode = TreeNode("malt")
+
+
+#newNode = TreeNode("malt")
 # print(insertBT_Node(newBT,newNode))
-# getDeepestNode =getDeepestNode(newBT)
-# print(getDeepestNode.data)          
+deepNode =getDeepestNode(newBT)
+print(deepNode.data)
+deleteDeepestNode(newBT,deepNode)
+levelOtravers(newBT)
 
 
 
