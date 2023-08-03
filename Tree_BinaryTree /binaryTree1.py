@@ -134,13 +134,33 @@ def deleteDeepestNode(rootNode,dNode):
             else:
                 customQueue.enqueue(root.value.rightChild)
 
+def deleteNodeBT(rootNode , node):
+    if not rootNode:
+        return "binary tree not exist"
+    else:
+        customQueue = queue.Queue()
+        customQueue.enqueue(rootNode)
+        while not (customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.data == node:
+                dNode = getDeepestNode(rootNode)
+                root.value.data = dNode.data
+                deleteDeepestNode(rootNode, dNode)
+                return "node has been deleted succesfully"
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
 
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+        
+        return "failed to delete node"
 
 #newNode = TreeNode("malt")
 # print(insertBT_Node(newBT,newNode))
 deepNode =getDeepestNode(newBT)
 print(deepNode.data)
 deleteDeepestNode(newBT,deepNode)
+deleteNodeBT(newBT,"Cold")
 levelOtravers(newBT)
 
 
