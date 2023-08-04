@@ -52,6 +52,10 @@ class BinaryTree:
                 self.lastUsedIndex -= 1
                 return "the node has been deleted"
 
+    def deleteBT(self):
+        self.customList = None
+        return "the binary tree has been successfuly deleted"
+
 newBT = BinaryTree(10)  
 print(newBT.insertNode("Drinks"))
 print(newBT.insertNode("Hot"))
@@ -62,3 +66,4 @@ newBT.PreOrderTraversal(1)
 newBT.postOrderTraversal(1)
 newBT.inOrderTraversal(1)
 newBT.levelOrderTraversal(1)
+newBT.deleteBT()
