@@ -51,6 +51,19 @@ def levelOrderTraverdsal(rootNode):
             if root.value.rightChild is not None:
                 customQueue.enqueue(root.value.rightChild)
 
+def searchNode(rootNode, nodeValue):
+    if rootNode.data == nodeValue:
+        print("value existr")
+    elif nodeValue < rootNode.data:
+        if rootNode.leftChild.data == nodeValue:
+            print("value is found")
+        else:
+            searchNode(rootNode.leftChilf, nodeValue)
+    else:
+        if rootNode.rightChild.data == nodeValue:
+            print ("value exist")
+        else:
+            searchNode(rootNode.rightChild, nodeValue)
 
 newBTS = BSTNode(None)
 print(insertNode(newBTS, 100))
@@ -60,3 +73,4 @@ preOrderTraversal(newBTS)
 postOrderTraversal(newBTS)
 inOrderTraversal(newBTS)
 levelOrderTraverdsal(newBTS)
+searchNode(newBTS, 90)
