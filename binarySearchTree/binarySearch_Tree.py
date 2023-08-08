@@ -20,3 +20,5 @@ def insertNode(rootNode,NodeValue):
     return "node has been sucessfuly inserted"
 newBTS = BSTNode(None)
 print(insertNode(newBTS, 100))
+print(insertNode(newBTS, 90))
+print(newBTS.data)
