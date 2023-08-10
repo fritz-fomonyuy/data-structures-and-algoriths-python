@@ -94,7 +94,7 @@ def deleteBST(rootNode):
     rootNode.data = None
     rootNode.rightChild = None
     rootNode.leftChild = None
-      
+
 newBTS = BSTNode(None)
 print(insertNode(newBTS, 100))
 print(insertNode(newBTS, 90))
@@ -107,3 +107,4 @@ inOrderTraversal(newBTS)
 levelOrderTraverdsal(newBTS)
 searchNode(newBTS, 90 )
 deleteNode(newBTS,90)
+deleteBST(newBTS)
