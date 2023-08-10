@@ -64,13 +64,38 @@ def searchNode(rootNode, nodeValue):
             print ("value exist")
         else:
             searchNode(rootNode.rightChild, nodeValue)
-
-newBTS = BSTNode(None)
-print(insertNode(newBTS, 100))
-print(insertNode(newBTS, 90))
-print(newBTS.data)
-preOrderTraversal(newBTS)
-postOrderTraversal(newBTS)
-inOrderTraversal(newBTS)
-levelOrderTraverdsal(newBTS)
-searchNode(newBTS, 90)
+def minValueNode(bstNode):
+    current = bstNode
+    while (current.leftChild is not None):
+        current = current.leftChild
+    return current
+def deleteNode(rootNode, nodeValue):
+    if rootNode is None:
+        return rootNode
+    if nodeValue < rootNode.data:
+        rootNode.leftChild = deleteNode(rootNode.leftChild, nodeValue)
+    elif nodeValue > rootNode.data:
+        rootNode.rightChild = deleteNode(rootNode.rightChild, nodeValue)
+    else:
+        if rootNode.leftChild is not None:
+            tempNode = rootNode.rightChild
+            rootNode = None
+            return tempNode
+        if rootNode.rightChild is not None:
+            tempNode = rootNode.rightChild
+            rootNode = None
+            return tempNode
+        tempNode = minValueNode(rootNode.rightChild)
+        rootNode.data = tempNode.data
+        rootNode.rightChild = deleteNode(rootNode.rightChild, tempNode.data)
+    return rootNode
+          
+# newBTS = BSTNode(None)
+# print(insertNode(newBTS, 100))
+# print(insertNode(newBTS, 90))
+# print(newBTS.data)
+# preOrderTraversal(newBTS)
+# postOrderTraversal(newBTS)
+# inOrderTraversal(newBTS)
+# levelOrderTraverdsal(newBTS)
+# searchNode(newBTS, 90 )
