@@ -89,13 +89,21 @@ def deleteNode(rootNode, nodeValue):
         rootNode.data = tempNode.data
         rootNode.rightChild = deleteNode(rootNode.rightChild, tempNode.data)
     return rootNode
-          
-# newBTS = BSTNode(None)
-# print(insertNode(newBTS, 100))
-# print(insertNode(newBTS, 90))
-# print(newBTS.data)
-# preOrderTraversal(newBTS)
-# postOrderTraversal(newBTS)
-# inOrderTraversal(newBTS)
-# levelOrderTraverdsal(newBTS)
-# searchNode(newBTS, 90 )
+
+def deleteBST(rootNode):
+    rootNode.data = None
+    rootNode.rightChild = None
+    rootNode.leftChild = None
+      
+newBTS = BSTNode(None)
+print(insertNode(newBTS, 100))
+print(insertNode(newBTS, 90))
+print(insertNode(newBTS, 50))
+print(insertNode(newBTS, 50))
+print(newBTS.data)
+preOrderTraversal(newBTS)
+postOrderTraversal(newBTS)
+inOrderTraversal(newBTS)
+levelOrderTraverdsal(newBTS)
+searchNode(newBTS, 90 )
+deleteNode(newBTS,90)
