@@ -36,20 +36,18 @@ def levelOrderTraverdsal(rootNode):
                 customQueue.enqueue(root.value.leftChild)
             if root.value.rightChild is not None:
                 customQueue.enqueue(root.value.rightChild)
-def searchBT(rootNode,nodeValue):
-    if not rootNode:
-        return "binaryTree not found"
+def searchAVL(rootNode,nodeValue):
+    if not rootNode.data == nodeValue:
+        print("the value is found")
+    elif nodeValue < rootNode.data :
+        if rootNode.leftChild.data == nodeValue :
+            print("found")
+        else:
+            searchAVL(rootNode.leftChild, nodeValue)
     else:
-        customQueue = queue.Queue()
-        customQueue.enqueue(rootNode)
-        while not (customQueue.isEmpty()):
-            root =customQueue.dequeue()
-            if root.value.data == nodeValue:
-                return True
-            if (root.value.leftChild is not None):
-                customQueue.enqueue(root.value.leftChild)
-            if (root.value.rightChild is not None):
-                customQueue.enqueue(root.value.rightChild)
-            return False                       
-
+        if rootNode.rightChild.data == nodeValue:
+            print("found")
+        else:
+            searchAVL(rootNode.rightChild,nodeValue)
+            
 newAVL = AVLNode(56)
