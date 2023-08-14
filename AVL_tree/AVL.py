@@ -61,4 +61,11 @@ def rightRotation(disbalancedNode):
     newRoot.rightChild = disbalancedNode
     disbalancedNode.height = 1 + max(getHeight(disbalancedNode.leftChild), getHeight(disbalancedNode.rightChild))
     newRoot.height = 1 + max(getHeight(newRoot.leftChild), getHeight(newRoot.rightChild))
+
+def leftRotation(disbalancedNode):
+    newRoot = disbalancedNode.rightChild
+    disbalancedNode.rightChild = disbalancedNode.rightChild.leftChild
+    newRoot.leftChild = disbalancedNode
+    disbalancedNode.height = 1 + max(getHeight(disbalancedNode.leftChild), getHeight(disbalancedNode.rightChild))
+    newRoot.height = 1 + max(getHeight(newRoot.leftChild), getHeight(newRoot.rightChild))
 newAVL = AVLNode(56)
