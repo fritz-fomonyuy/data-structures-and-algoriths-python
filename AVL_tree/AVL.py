@@ -131,7 +131,11 @@ def deleteNode(rootNode,nodeValue):
         rootNode.rightChild = rightRotation(rootNode.rightChild)
         return leftRotation(rootNode)
     return rootNode
-    
+def deleteAVL_Tree(rootNode):
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "avl tree has been deleted successfuly"   
 
 
 
