@@ -139,4 +139,5 @@ def deleteNode(rootNode,nodeValue):
 newAVL = AVLNode(56)
 newAVL = insertNode(newAVL,60)
 newAVL = insertNode(newAVL, 39)
+newAVL = deleteNode(newAVL, 56)
 levelOrderTraverdsal(newAVL)
