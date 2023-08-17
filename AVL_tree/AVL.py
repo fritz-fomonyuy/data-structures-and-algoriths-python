@@ -25,7 +25,7 @@ def postOrderTraversal(rootNode):
     print(rootNode.data)
 def levelOrderTraverdsal(rootNode):
     if not rootNode:
-        return
+        return 
     else:
         customQueue = queue.Queue()
         customQueue.enqueue(rootNode)
