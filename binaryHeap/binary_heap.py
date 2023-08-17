@@ -94,7 +94,8 @@ def extractNode(rootNode,heapType):
         rootNode.heapSize -=1
         heapifyTreeExtract(rootNode,1,heapType)
         return extractedNode
-
+def deleteBHeap(rootNode):
+    rootNode.customList = None
             
 newHeap = Heap(5)
 insertNode(newHeap,12,"min")
@@ -102,4 +103,5 @@ insertNode(newHeap,30,"min")
 insertNode(newHeap,15,"min")
 insertNode(newHeap,11,"min")
 extractNode(newHeap,"min")
+deleteBHeap(newHeap)
 levelOrderTraversal(newHeap)
