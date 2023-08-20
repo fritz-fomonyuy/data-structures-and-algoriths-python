@@ -55,5 +55,6 @@ def deleteString(root,word, index):
 newTrie = Trie()
 newTrie.insertString("assnal")
 newTrie.insertString("assgjjlijigjhlk")
+newTrie.insertString("aswingd")
 print(newTrie.searchString("fer"))
 deleteString(newTrie.root,"assnal",0)
