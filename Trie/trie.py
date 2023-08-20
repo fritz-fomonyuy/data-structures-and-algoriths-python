@@ -27,7 +27,33 @@ class Trie:
             if currentNode.endOfString == True:
                 return True
             else:
-                return False       
+                return False 
+def deleteString(root,word, index):
+    ch = word[index]
+    curentNode = root.children.get(ch)
+    canThisNodeBeDeleted = False
+
+    if len(curentNode.children) > 1:
+        deleteString(curentNode,word,index+1)
+        return False
+    if index == len(word) - 1:
+        if len(curentNode.children)>= 1:
+            curentNode.endOfString = False
+            return False
+        else:
+            root.children.pop(ch)
+            return True
+    if curentNode.endOfString == True:
+        deleteString(curentNode,word, index + 1)
+        return False
+    canThisNodeBeDeleted = deleteString(curentNode,word,index + 1)
+    if canThisNodeBeDeleted == True:
+        root.children.pop(ch)
+        return True
+    else:
+        return False
 newTrie = Trie()
 newTrie.insertString("assnal")
+newTrie.insertString("assgjjlijigjhlk")
 print(newTrie.searchString("fer"))
+deleteString(newTrie.root,"assnal",0)
