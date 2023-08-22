@@ -46,10 +46,10 @@ print(my_array.buffer_info())
 print(my_array.count(2))
 
 #convert array to string using tostring() method
-strTemp = my_array.tostring()
+strTemp = my_array.tolist()
 print(strTemp)
 ints = array('i')
-ints.fromstring(strTemp)
+ints.fromlist(strTemp)
 print(ints)
 
 #slice elements in array
