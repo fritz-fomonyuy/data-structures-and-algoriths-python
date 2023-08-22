@@ -10,5 +10,5 @@ for b in ages:
     print(b)
 
 for i in range(len(names)):
-    names[i] = names[i]+ "+"
+    names[i] = names[i]+ "34"
     print(names[i])
