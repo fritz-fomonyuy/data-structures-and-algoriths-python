@@ -97,6 +97,7 @@ singlelinkedList = SlinkedList()
 singlelinkedList.insertSLL(1,1)
 singlelinkedList.insertSLL(1,1)
 singlelinkedList.insertSLL(2,2)
+singlelinkedList.insertSLL(45,2)
 singlelinkedList.insertSLL(7,3)
 print([node.value for node in singlelinkedList])
 
