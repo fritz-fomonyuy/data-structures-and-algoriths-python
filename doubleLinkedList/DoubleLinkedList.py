@@ -210,3 +210,6 @@ double_linked_list.searchDLL(3)
 double_linked_list.deleteNode(1)
 double_linked_list.deleteEntireDLL()
 print([node.value for node in double_linked_list])
+
+
+        
