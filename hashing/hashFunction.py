@@ -12,3 +12,4 @@ def modASCII(string, cellnum):
 
 hashValue2 = modASCII("fritz", 40)
 print(hashValue2)
+
