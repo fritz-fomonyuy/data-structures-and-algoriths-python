@@ -13,7 +13,20 @@ def selectionSort(customList):
                 min_index = j
         customList[i],customList[min_index] = customList[min_index],customList[i]
     print(customList)
+
+def insertionSort(customList):
+    for i in range(1, len(customList)):
+        key = customList[i]
+        j = i-1
+        while j>=0 and key < customList[j]:
+            customList[j+1] = customList[j]
+            j-=1
+        customList[j+1] = key
+    print(customList)
+
 intergers = [1,5,7,3,8,2,3,7]
 buble_sort(intergers)
 selectionSort(intergers)
+insertionSort(intergers)
+print(len(intergers))
 
