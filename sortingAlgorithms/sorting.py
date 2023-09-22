@@ -1,3 +1,4 @@
+import math 
 def buble_sort(customList):
     for i in range(len(customList)-1):
         for j in range(len(customList)-i-1):
@@ -22,11 +23,27 @@ def insertionSort(customList):
             customList[j+1] = customList[j]
             j-=1
         customList[j+1] = key
-    print(customList)
-
+    return customList
+def bucketSort(customList):
+    numberOfBuckets = round(math.sqrt(len(customList)))
+    maxValue = max(customList)
+    arr = []
+    for i in range(numberOfBuckets):
+        arr.append([])
+    for j in customList:
+        indexPos = math.ceil(j*numberOfBuckets/maxValue)
+        arr[indexPos-1].append(j)
+    for i in range(numberOfBuckets):
+        arr[i]= insertionSort(arr[i])
+    h = 0 
+    for i in range(numberOfBuckets):
+        for j in range(len(arr[i])):
+            customList[h]= arr[i][j]
+            h +=1
+    return customList
 intergers = [1,5,7,3,8,2,3,7]
 buble_sort(intergers)
 selectionSort(intergers)
 insertionSort(intergers)
-print(len(intergers))
+bucketSort(intergers)
 
