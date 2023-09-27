@@ -57,7 +57,7 @@ def merge(customList,l,m,r):
 
     i = 0 
     j = 0
-    k = 0
+    k = l
 
     while i < n1 and j < n2:
         if L[i] <=  R[j]:
