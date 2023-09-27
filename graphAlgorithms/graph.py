@@ -5,7 +5,7 @@ class Graph:
         self.graphDict= graphDict
     
     def addEdge(self,vertex,edge):
-        self.grahpDict[vertex].append(edge)
+        self.graphDict[vertex].append(edge)
 
 
 customDict = {
@@ -19,4 +19,5 @@ customDict = {
 }
 
 graph = Graph(customDict)
+graph.addEdge("e","g")
 print(graph.graphDict)
