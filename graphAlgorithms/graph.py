@@ -18,7 +18,16 @@ class Graph:
                     visited.append(adjacentVertex)
                     queue.append(adjacentVertex)
 
-
+    def dfs(self,vertex):
+        visited = [vertex]
+        stack = [vertex]
+        while stack:
+            popVertex = stack.pop()
+            print(popVertex)
+            for adjacentVertex in self.graphDict[popVertex]:
+                if adjacentVertex not in visited:
+                    visited.append(adjacentVertex)
+                    stack.append(adjacentVertex)
 customDict = {
     "a":["c","d"],
     "b":["a","b","e"],
@@ -33,3 +42,4 @@ graph = Graph(customDict)
 graph.addEdge("e","g")
 print(graph.graphDict)
 graph.bfs("a")
+graph.dfs("a")
